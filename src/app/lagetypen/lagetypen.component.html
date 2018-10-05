@@ -1,13 +1,14 @@
 <mat-card>
-  <canvas #drawingCanvas width="800px" height="700px" style="margin: 0 auto;"></canvas>
+  <canvas #drawingCanvas width="800px" height="700px" style="display: block; margin: 0 auto; max-width: 100%"></canvas>
 </mat-card>
-
+<br>
 <mat-card>
-  <h2>Main axis: {{mainAxisDegree}}° - {{lagetyp}}</h2>
+  <mat-card-title>Main axis: {{mainAxisDegree}}°</mat-card-title><mat-card-subtitle>{{lagetyp}}</mat-card-subtitle>
   <mat-slider [displayWith]="formatLabelDegree" thumbLabel min="0" max="360" [(value)]="mainAxisDegree" style="width: 100%"></mat-slider>
-
-  <mat-divider [inset]="true"></mat-divider>
-  <h2>Einthoven</h2>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-title>Einthoven</mat-card-title>
 
   <div style="display: inline">
     <label>I</label>
@@ -24,8 +25,8 @@
     <mat-slider disabled [(value)]="lengthIII" min="-100" max="100" vertical></mat-slider>
   </div>
 
-  <p style="display: inline" *ngIf="allThreePositive">
-    <em>All three leads positive!</em> I>III = Indifferenztyp, III>I = Steiltyp
+  <p style="display: block" *ngIf="allThreePositive">
+    <em>All three leads positive!</em><br> I>III = Indifferenztyp, III>I = Steiltyp
   </p>
 
   <mat-divider [inset]="true"></mat-divider>
