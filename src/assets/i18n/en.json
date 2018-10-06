@@ -1,0 +1,15 @@
+{
+    "TITLE": "ECG Electrical Axis",
+    "MainAxis": "Electrical axis",
+    "Einthoven": "Einthoven",
+    "ThirdElectrode": "Offset third electrode",
+    "einthovenAllPositive": "All three leads are positive",
+    "einthovenPositiveConsiderations": "I > III = Horizontal axis, III > I = Vertical axis",
+
+    "horizontalAxis": "Horizontal axis",
+    "normalAxis": "Normal axis",
+    "verticalAxis": "Vertical axis",
+    "rightAxis": "Right axis",
+    "extremeRight": "Extreme right axis deviation",
+    "extremeLeft": "Left axis deviation"
+}

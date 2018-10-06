@@ -1,3 +1,18 @@
-<div id="centered">
-  <app-lagetypen></app-lagetypen>
-</div>
+<section class="mat-typography">
+  <mat-toolbar>
+    <span>{{ 'TITLE' | translate }}</span>
+    <span style="color: rgb(177, 177, 177); font-weight: 100">&nbsp;by <a style="color: inherit" href="https://chrisk91.me">ChrisK91</a></span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <mat-button-toggle-group>
+      <mat-button-toggle value="en" (click)="changeLang('en')">EN</mat-button-toggle>
+      <mat-button-toggle value="de" (click)="changeLang('de')">DE</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-toolbar>
+
+  <div id="centered">
+    <app-lagetypen></app-lagetypen>
+  </div>
+</section>

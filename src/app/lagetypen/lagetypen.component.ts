@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { TranslateService } from '@ngstack/translate';
+
 
 @Component({
   selector: 'app-lagetypen',
@@ -20,17 +22,31 @@ export class LagetypenComponent implements OnInit {
 
   lagetyp = "";
 
-  lagetypenListe = [
-      {start: 0, end: 30, typ: "Linkstyp"},
-      {start: 30, end: 60, typ: "Indifferenztyp"},
-      {start: 60, end: 90, typ: "Steiltyp"},
-      {start: 90, end: 120, typ: "Rechtstyp"},
-      {start: 120, end: 270, typ: "Überdrehter Rechtstyp"},
-      {start: 270, end: 330, typ: "Überdrehter Linkstyp"},
-      {start: 330, end: 360, typ: "Linkstyp"}
-    ]
+  lagetypenListe = []
+  translate;
 
-  constructor(private ngZone: NgZone) { }
+  private updateNames(){
+    this.lagetypenListe = [
+      {start: 0, end: 30, typ: this.translate.get("horizontalAxis")},
+      {start: 30, end: 60, typ: this.translate.get("normalAxis")},
+      {start: 60, end: 90, typ: this.translate.get("verticalAxis")},
+      {start: 90, end: 120, typ: this.translate.get("rightAxis")},
+      {start: 120, end: 270, typ: this.translate.get("extremeRight")},
+      {start: 270, end: 330, typ: this.translate.get("extremeLeft")},
+      {start: 330, end: 360, typ: this.translate.get("horizontalAxis")}
+    ]
+  }
+
+  constructor(private ngZone: NgZone, translate: TranslateService) {
+    this.translate = translate;
+    this.updateNames();
+
+    translate.activeLangChanged.subscribe(
+      (event: { previousValue: string; currentValue: string }) => {
+        this.updateNames();
+      }
+    );
+   }
 
   ngOnInit() {
     //this.ngZone.runOutsideAngular(() => this.paint());
