@@ -1,0 +1,15 @@
+{
+    "TITLE": "EKG Lagetypen",
+    "MainAxis": "Herzachse",
+    "Einthoven": "Einthoven",
+    "ThirdElectrode": "Position dritte Elektrode",
+    "einthovenAllPositive": "Alle Ableitungen sind positiv",
+    "einthovenPositiveConsiderations": "I > III = Indifferenztyp, III > I = Steiltyp",
+    
+    "horizontalAxis": "Linkstyp",
+    "normalAxis": "Indifferenztyp",
+    "verticalAxis": "Steiltyp",
+    "rightAxis": "Rechtstyp",
+    "extremeRight": "Überdrehter Rechtstyp",
+    "extremeLeft": "Überdrehter Linkstyp"
+}
